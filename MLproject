@@ -1,27 +1,14 @@
-name: Wind_Power_Assignment
+name: Wind_Power_Prediction_Assignment
 
 python_env: python_env.yaml
 
 entry_points:
   main:
     parameters:
-      # General Model Selection
       model_type: {type: string, default: "grb"}
-      
-      # Gradient Boosting Parameters
       n_estimators: {type: int, default: 100}
       learning_rate: {type: float, default: 0.1}
       max_depth: {type: int, default: 3}
-      
-      # SVR Parameters
       svr_c: {type: float, default: 1.0}
       svr_epsilon: {type: float, default: 0.1}
-
-    command: >
-      python script.py 
-      --model_type {model_type} 
-      --n_estimators {n_estimators} 
-      --learning_rate {learning_rate} 
-      --max_depth {max_depth} 
-      --svr_c {svr_c} 
-      --svr_epsilon {svr_epsilon}
+    command: "python script.py --model_type {model_type} --n_estimators {n_estimators} --learning_rate {learning_rate} --max_depth {max_depth} --svr_c {svr_c} --svr_epsilon {svr_epsilon}"
